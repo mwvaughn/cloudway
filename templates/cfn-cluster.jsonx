@@ -1,0 +1,50 @@
+{
+    "description": "Experimental AWS cfncluster for iPlant DNAsubway",
+    "executionType": "HPC",
+    "id": "dnasubway-cfncluster.us-west-1.compute.amazonaws.com",
+    "login": {
+        "auth": {
+            "type": "SSHKEYS",
+            "username":"ec2-user",
+            "publicKey": "${SERIALIZED_PUBLIC}",
+            "privateKey": "${SERIALIZED_PRIVATE}"
+        },
+        "host": "${PUBLIC_IP}",
+        "port": 22,
+        "protocol": "SSH"
+    },
+    "maxSystemJobs": 100,
+    "maxSystemJobsPerUser": 5,
+    "name": "iPlant Experimental CfnCluster (AWS)",
+    "public": false,
+    "queues": [
+        {
+            "default": true,
+            "maxJobs": 32,
+            "maxMemoryPerNode": "30GB",
+            "maxNodes": 1,
+            "maxProcessorsPerNode": 16,
+            "name": "all.q"
+        }
+    ],
+    "scheduler": "SGE",
+    "scratchDir": "scratch",
+    "site": "us-west-1.compute.amazonaws.com",
+    "startupScript": "./bashrc",
+    "status": "UP",
+  "storage": {
+        "auth": {
+            "type": "SSHKEYS",
+            "username":"ec2-user",
+            "publicKey": "${SERIALIZED_PUBLIC}",
+            "privateKey": "${SERIALIZED_PRIVATE}"
+        },
+        "homeDir": "/",
+        "host": "${PUBLIC_IP}",
+        "port": 22,
+        "protocol": "SFTP",
+        "rootDir": "/shared/agave"
+    },
+    "type": "EXECUTION",
+    "workDir": "work"
+}

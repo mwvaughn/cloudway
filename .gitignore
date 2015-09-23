@@ -1,0 +1,8 @@
+iplantCompute.cfn
+*.pem
+.DS_Store
+*log.txt
+*.err
+*.out
+cfn-cluster.json
+cfn-storage.json

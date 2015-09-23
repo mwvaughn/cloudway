@@ -1,0 +1,30 @@
+[aws]
+aws_region_name = us-west-1_changeit
+aws_access_key_id = AKI_changeit_MMA
+aws_secret_access_key = D1l4L_changeit_qNvV
+
+[global]
+update_check = true
+sanity_check = true
+cluster_template = demofleet
+
+[cluster demofleet]
+vpc_settings = public
+key_name = demo
+scheduler = sge
+s3_read_resource = *
+cluster_type = spot
+spot_price = 1.00
+compute_instance_type = c3.4xlarge
+maintain_initial_size = true
+initial_queue_size = 2
+max_queue_size = 10
+
+[vpc iplant]
+master_subnet_id = subnet-cbde0eae
+vpc_id = vpc-54e81031
+
+[vpc public]
+# us-west-1b
+master_subnet_id = subnet-cbde0eae
+vpc_id = vpc-54e81031

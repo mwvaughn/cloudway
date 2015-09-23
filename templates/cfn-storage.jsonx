@@ -1,0 +1,20 @@
+{   "description": "Storage volume for experimental AWS cfncluster for iPlant DNAsubway",
+    "id": "dnasubway-storage.us-west-1.compute.amazonaws.com",
+    "name": "EBS shared volume providing SCRATCH to our CfnCluster",
+    "site": "us-west-1.compute.amazonaws.com",
+    "status": "UP",
+    "storage": {
+        "auth": {
+            "type": "SSHKEYS",
+            "username":"ec2-user",
+            "publicKey": "${SERIALIZED_PUBLIC}",
+            "privateKey": "${SERIALIZED_PRIVATE}"
+        },
+        "homeDir": "/",
+        "host": "${PUBLIC_IP}",
+        "port": 22,
+        "protocol": "SFTP",
+        "rootDir": "/shared/agave"
+    },
+    "type": "STORAGE"
+}
